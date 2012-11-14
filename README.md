@@ -42,10 +42,14 @@ precondition.checkDefined(void 0, "%s doesn't look %s.", "This", "right"); // th
 var addOnlyNumbersBelow100 = function(number1, number2){
 	precondition.checkRange(number1 < 100);
 	precondition.checkRange(number2 < 100);
-
 	return number1 + number2;
 };
 
 addOnlyNumbersBelow100(10, 20); // returns 30
 addOnlyNumbersBelow100(10, 338484); // throws RangeError
 ```
+
+## Developing
+precondition uses grunt to build.
+* `grunt` - Builds the standard and minified version of precondition in the build folder
+* `grunt test` - Builds precondition and runs unit tests (requires PhantomJS)
