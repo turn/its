@@ -10,16 +10,19 @@ There are four available functions:
 * `precondition.check(expression [, errorType] [, messageTemplate [, messageArgs...]])` for throwing custom errors
 
 `expression` is a boolean value which determines whether the precondition will throw an error or not.
+
 `messageTemplate` is a message with 0 or more '%s' placeholders for message arguments
+
 `messageArgs` is a variable argument (0 or more) to fill the placeholders in the message template
+
 `errorType` is used for throwing custom error objects. These objects should inherit from `Error`.
 
 ## Examples
 ```javascript
 // Things that should pass
-precondition.checkDefined("anything"); // throws ReferenceError
-precondition.checkType(typeof "something" === "string"); // throws TypeError
-precondition.checkRange(1 < 2 && 1 > 0); // throws RangeError
+precondition.checkDefined("anything"); // returns "anything"
+precondition.checkType(typeof "something" === "string"); // returns true
+precondition.checkRange(1 < 2 && 1 > 0); // returns true
 precondition.check(1 === 1); // returns true
 precondition.check(1 === 1, ReferenceError); // throws true
 
@@ -33,7 +36,7 @@ precondition.check(1 === void 0, ReferenceError); // throws ReferenceError
 // Messages
 precondition.checkDefined(void 0, "This doesn't look right."); // throws ReferenceError with a message of "This doesn't look right."
 precondition.checkDefined(void 0, "This doesn't look %s.", "right"); // throws ReferenceError with a message of "This doesn't look right."
-precondition.checkDefined(void 0, "%s doesn't look %s.", "This", right"); // throws ReferenceError with a message of "This doesn't look right."
+precondition.checkDefined(void 0, "%s doesn't look %s.", "This", "right"); // throws ReferenceError with a message of "This doesn't look right."
 
 // What real use may look like
 var addOnlyNumbersBelow100 = function(number1, number2){
@@ -46,5 +49,3 @@ var addOnlyNumbersBelow100 = function(number1, number2){
 addOnlyNumbersBelow100(10, 20); // returns 30
 addOnlyNumbersBelow100(10, 338484); // throws RangeError
 ```
-
-## MIT License
