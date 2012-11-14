@@ -1,0 +1,1 @@
+exports.precondition = require('./server/lib/precondition.js');
