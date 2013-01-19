@@ -1,4 +1,5 @@
-# its
+# its [![Build Status](https://secure.travis-ci.org/ozanturgut/its.png?branch=master)](http://travis-ci.org/ozanturgut/its)
+
 Its a utility to simplify common precondition or state checking. It's useful for signaling
 to calling methods when they've made invalid calls to a method.
 
