@@ -14,7 +14,8 @@ There are four available functions:
     * `its.boolean(obj [, messageTemplate [, messageArgs...]])` for throwing type errors
     * `its.array(obj [, messageTemplate [, messageArgs...]])` for throwing type errors
     * `its.object(obj [, messageTemplate [, messageArgs...]])` for throwing type errors
-    * `its.function(obj [, messageTemplate [, messageArgs...]])` for throwing type errors
+    * `its.func(obj [, messageTemplate [, messageArgs...]])` for throwing type errors
+    * `its.args(obj [, messageTemplate [, messageArgs...]])` for throwing type errors
     * `its.string(obj [, messageTemplate [, messageArgs...]])` for throwing type errors
     * `its.number(obj [, messageTemplate [, messageArgs...]])` for throwing type errors
     * `its.date(obj [, messageTemplate [, messageArgs...]])` for throwing type errors
@@ -32,7 +33,7 @@ There are four available functions:
 ```javascript
 // Things that should pass
 its.string('hi'); // returns true
-its.function(function(){}); // returns true
+its.func(function(){}); // returns true
 its.date(new Date); //returns true
 its.defined("anything"); // returns "anything"
 its.type(typeof "something" === "string"); // returns true
