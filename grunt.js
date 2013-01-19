@@ -13,9 +13,6 @@ module.exports = function(grunt) {
   // Project configuration.
   grunt.initConfig({
     pkg: '<json:package.json>',
-    files: {
-      lib: ['build_resource/module_prefix.js', 'lib/**/*.js', 'build_resource/module_postfix.js']
-    },
     meta: {
       banner: '/*! <%= pkg.title || pkg.name %> - v<%= pkg.version %> - ' +
         '<%= grunt.template.today("yyyy-mm-dd") %>\n' +
@@ -23,25 +20,24 @@ module.exports = function(grunt) {
         '* Copyright <%= grunt.template.today("yyyy") %> <%= pkg.author.name %>;' +
         ' Licensed <%= _.pluck(pkg.licenses, "type").join(", ") %> */'
     },
-    concat: {
-      dist: {
-        src: ['<banner:meta.banner>', '<config:files.lib>'],
-        dest: 'build/<%= pkg.name %>.js'
-      },
-      test: {
-        src: ['<banner:meta.banner>', '<config:files.lib>'],
-        dest: 'test/lib/<%= pkg.name %>.js'
+    hug: {
+      build:{
+        src: './lib/<%= pkg.name %>.js',
+        dest: 'build/<%= pkg.name %>.js',
+        exports: './lib/<%= pkg.name %>.js',
+        exportedVariable: '<%= pkg.name %>'
       }
     },
     min: {
       dist: {
-        src: ['<banner:meta.banner>', '<config:concat.dist.dest>'],
-        dest: 'build/<%= pkg.name %>.min.js'
-      },
-      test: {
-        src: ['<banner:meta.banner>', '<config:concat.dist.dest>'],
-        dest: 'test/lib/<%= pkg.name %>.min.js'
-      },
+        src: ['<banner:meta.banner>', '<config:hug.build.dest>'],
+        dest: 'dist/<%= pkg.name %>.js'
+      }
+    },
+    clean: {
+      build: {
+        src: [ 'build', 'dist' ]
+      }
     },
     lint: {
       files: ['lib/**/*.js']
@@ -79,6 +75,8 @@ module.exports = function(grunt) {
     }
   });
 
-  grunt.registerTask('test', 'concat:test min:test qunit');
-  grunt.registerTask('default', 'concat min');
+  grunt.loadNpmTasks('grunt-hug');
+  grunt.loadNpmTasks('grunt-contrib-clean');
+  grunt.registerTask('test', 'qunit');
+  grunt.registerTask('default', 'clean hug test min');
 };

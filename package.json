@@ -1,21 +1,27 @@
 {
-  "name": "precondition",
+  "name": "its",
   "version": "1.0.0",
-  "description": "For safe coding",
+  "description": "Preconditions for safe coding",
   "main": "index.js",
-  "dependencies": {
-  },
-  "optionalDependencies": {
-  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "grunt test"
+  },
+  "devDependencies": {
+    "grunt-hug": "~0.4.0",
+    "grunt-contrib-clean": "~0.3.1",
+    "grunt-contrib-copy": "~0.3.1"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/ozanturgut/precondition.git"
+    "url": "https://github.com/ozanturgut/its.git"
   },
   "keywords": [
     "test",
+    "it",
+    "its",
+    "is",
+    "assertion",
+    "assert",
     "precondition"
   ],
   "author": {

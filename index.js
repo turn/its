@@ -1,1 +1,1 @@
-exports.precondition = require('./server/lib/precondition.js');
+module.exports = require('./lib/its.js');
