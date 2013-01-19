@@ -140,11 +140,17 @@ test("its.type", function() {
 	its.object(new Date);
 	its.object(function(){});
 
-	// its.function
-	try{ its.function({});}
+	// its.args
+	try{ its.args({});}
 	catch(e){ ok(e instanceof TypeError, "Error is not an instance of TypeError");}
 
-	its.function(function(){});
+	its.args((function(){return arguments}()));
+
+	// its.function
+	try{ its.func({});}
+	catch(e){ ok(e instanceof TypeError, "Error is not an instance of TypeError");}
+
+	its.func(function(){});
 
 	// its.string
 	try{ its.string(1);}
