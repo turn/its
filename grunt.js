@@ -77,6 +77,6 @@ module.exports = function(grunt) {
 
   grunt.loadNpmTasks('grunt-hug');
   grunt.loadNpmTasks('grunt-contrib-clean');
-  grunt.registerTask('test', 'qunit');
-  grunt.registerTask('default', 'clean hug test min');
+  grunt.registerTask('test', 'default qunit');
+  grunt.registerTask('default', 'clean hug min');
 };
