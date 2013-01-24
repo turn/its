@@ -7,10 +7,10 @@ test("precondition exists", 4, function() {
 
 test("is", 7, function() {
 	var testMessage = "Test Message";
-		testTemplate = "Test %s, %s.";
-		testTemplateArg1 = "one";
-		testTemplateArg2 = "two";
-		testTemplateRendered = "Test one, two.";
+	var testTemplate = "Test %s, %s.";
+	var testTemplateArg1 = "one";
+	var testTemplateArg2 = "two";
+	var testTemplateRendered = "Test one, two.";
 
 	ok(its(1 === 1) === true);
 
@@ -43,10 +43,10 @@ test("is", 7, function() {
 
 test("its.defined", 6, function() {
 	var testMessage = "Test Message";
-		testTemplate = "Test %s, %s.";
-		testTemplateArg1 = "one";
-		testTemplateArg2 = "two";
-		testTemplateRendered = "Test one, two.";
+	var testTemplate = "Test %s, %s.";
+	var testTemplateArg1 = "one";
+	var testTemplateArg2 = "two";
+	var testTemplateRendered = "Test one, two.";
 
 	ok(its.defined(false) === false);
 
@@ -73,10 +73,10 @@ test("its.defined", 6, function() {
 
 test("its.type", function() {
 	var testMessage = "Test Message";
-		testTemplate = "Test %s, %s.";
-		testTemplateArg1 = "one";
-		testTemplateArg2 = "two";
-		testTemplateRendered = "Test one, two.";
+	var testTemplate = "Test %s, %s.";
+	var testTemplateArg1 = "one";
+	var testTemplateArg2 = "two";
+	var testTemplateRendered = "Test one, two.";
 
 	ok(its.type(typeof "something" === "string") === true, "Manual type test - positive");
 
@@ -183,10 +183,10 @@ test("its.type", function() {
 
 test("its.range", 6, function() {
 	var testMessage = "Test Message";
-		testTemplate = "Test %s, %s.";
-		testTemplateArg1 = "one";
-		testTemplateArg2 = "two";
-		testTemplateRendered = "Test one, two.";
+	var testTemplate = "Test %s, %s.";
+	var testTemplateArg1 = "one";
+	var testTemplateArg2 = "two";
+	var testTemplateRendered = "Test one, two.";
 
 	ok(its.range(1 > 0) === true);
 
