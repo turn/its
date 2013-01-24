@@ -40,7 +40,7 @@ module.exports = function(grunt) {
       }
     },
     lint: {
-      files: ['lib/**/*.js']
+      all: ['lib/**/*.js']
     },
     qunit: {
       all: ['test/**/*.html']
@@ -57,12 +57,13 @@ module.exports = function(grunt) {
       },
 
       options: {
-        quotmark: 'single',
+        node:true,
+        strict: false,
         camelcase: true,
-        strict: true,
-        trailing: true,
         curly: true,
+        es5:true,
         eqeqeq: true,
+        loopfunc:true,
         immed: true,
         latedef: true,
         newcap: true,
@@ -78,5 +79,5 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-hug');
   grunt.loadNpmTasks('grunt-contrib-clean');
   grunt.registerTask('test', 'default qunit');
-  grunt.registerTask('default', 'clean hug min');
+  grunt.registerTask('default', 'clean lint hug min');
 };

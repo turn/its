@@ -1,6 +1,6 @@
 {
   "name": "its",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Preconditions for safe coding",
   "main": "index.js",
   "scripts": {
@@ -25,7 +25,12 @@
     "precondition"
   ],
   "author": {
-    "name": "Ozan Turgut"
+    "name": "Ozan Turgut",
+    "email": "ozanturgut@gmail.com"
   },
+  "contributors": [
+    "Ozan Turgut <ozanturgut@gmail.com>",
+    "tv <tv@shackspace.de>"
+  ],
   "licenses": [{"type": "MIT"}]
 }
